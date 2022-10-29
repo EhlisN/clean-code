@@ -1,6 +1,6 @@
 /* Basic Style */
 
-body {
+.body {
   background-color: #f8f8f8;
   color: #333;
   font-family: Lato, sans-serif;
@@ -13,12 +13,12 @@ body {
   text-align: right;
 }
 
-.header-img {
+.header__img {
   width: 100%;
 }
 
-.header .header-info {
-  font-family: fantasy, cursive;
+.header__link {
+  font-family: Fantasy, cursive;
 }
 
 @media (max-width: 768px) {
@@ -35,27 +35,28 @@ body {
   margin: 0 auto 0;
 }
 
-.task {
-  width: 100%;
+.task-item__text,
+.task-item__label {
+  width: 56%;
   display: inline-block;
   flex-grow: 1;
 }
 
-.add-task {
+.task-container {
   display: flex;
 }
 
-.list {
+.task-list {
   margin: 0;
   padding: 0px;
 }
 
-.list-item, 
-.list-name {
+.task-item,
+.main-section__title {
   list-style: none;
 }
 
-.input, 
+.task-item__text,
 .btn {
   outline: none;
 }
@@ -76,8 +77,7 @@ body {
 
 /* Heading */
 
-.list-name,
-.task[for="new-task"] {
+.main-section__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -87,7 +87,7 @@ body {
   text-transform: uppercase;
 }
 
-.task-text {
+.task-item__text {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -100,24 +100,20 @@ body {
   color: #888;
 }
 
-.task-text:focus {
+.task-item__text:focus {
   color: #333;
 }
 
 /* New Task */
 
-.task[for="new-task"] {
+.main-section__title_add {
   display: block;
   margin: 0 0 20px;
 }
 
-#new-task {
-  width: 318px;
-}
-
 /* Task list */
 
-.list-item {
+.task-item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -126,53 +122,53 @@ body {
   align-items: center;
 }
 
-.list-item > * {
+.task-item > * {
   vertical-align: middle;
 }
 
-.list-item > .checkbox {
+.task-item__checkbox {
   margin: 0 10px;
 }
 
-.list-item > .task {
+.task-item__label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-.list-item > .task-text {
+.task-item__text {
   width: 226px;
 }
 
-.btn.delete .btn-img {
+.btn__delete-icon {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.btn.delete .btn-img:hover {
+.btn__delete-icon:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
 
-#completed-tasks .task {
+.task-list_completed .task-item__label {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
 
-.list .list-item .task-text {
+.task-item .task-item__text {
   display: none;
 }
 
-.list .list-item.edit-mode .task-text {
+.task-item_edit .task-item__text {
   display: inline-block;
   width: 224px;
 }
 
-.list .list-item.edit-mode .task {
+.task-item_edit .task-item__label {
   display: none;
 }
